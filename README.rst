@@ -34,6 +34,6 @@ Basic Usage
          await instagram.download(url, id)
          print("Outputted")
       asyncio.run(do())
-This example starts off by using the wrappers check function which attempts to validate the URL as a reel. If validated, we proceed to downloading it. The download function uses ``ytdl`` to download, then uses``movie.py`` to decompress the outputted file **(not necessary).**
+This example starts off by using the wrappers check function which attempts to validate the URL as a reel. If validated, we proceed to downloading it. The download function uses ``ytdl`` to download, then uses ``movie.py`` to decompress the outputted file **(not necessary).**
 
 You can find another example using the lastest version of ``discord.py`` in the `examples directory <https://github.com/inadvertently/InstagramReelAPI/tree/main/IGReelAPI/InstagramReelAPI/examples>`_.
