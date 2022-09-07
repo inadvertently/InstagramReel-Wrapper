@@ -10,11 +10,3 @@ async def do():
     if state:
         await instagram.download(url, id)
 asyncio.run(do())
-
-
-
-
-
-
-
-
