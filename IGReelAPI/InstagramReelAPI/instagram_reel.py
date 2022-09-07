@@ -10,12 +10,11 @@ regexes = [
 regexes = [re.compile(x) for x in regexes]
 
 async def download(url, filename):
-    opts = {
+    ydl = YoutubeDL({
         'outtmpl': f'reel/{filename}.%(ext)s',
         'format': 'bestaudio/best'
-    }
-    with YoutubeDL(opts) as ytdl:
-        ytdl.download([str(url)])
+    })
+    ydl.download([str(url)])
     path = glob.glob(f'reel/{filename}.*')[0]
     clip = VideoFileClip(path)
     clip1 = clip.subclip(0, 7)
@@ -23,12 +22,13 @@ async def download(url, filename):
     h1 = clip1.h
     print("Width x Height of clip 1 : ", end = " ")
     print(str(w1) + " x ", str(h1))
-    clip2 = clip1.resize(0.5)
+    print("---------------------------------------")
+    clip2 = clip1.resize(0.7)
     w2 = clip2.w
     h2 = clip2.h
     print("Width x Height of clip 2 : ", end = " ")
     print(str(w2) + " x ", str(h2))
-    a = clip2.write_videofile("outputs/reel.mp4")
+    a = clip2.write_videofile("outputs/reel.mp4", threads = 12, fps=24, audio=True)
 
 async def binary():
     with open("outputs/reel.mp4", "rb") as fh:
