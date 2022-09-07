@@ -13,12 +13,7 @@ Features
 - Optimised for quality yet decent speed.
 --------
 
-Installing necessary modules:
 
-.. code:: sh
-
-    # Windows
-    py -3 -m pip install aa
 Basic Usage
 --------
 .. code:: py
